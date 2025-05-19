@@ -1,0 +1,29 @@
+{
+  "name": "posmotri-v-okno-fd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Привет!'",
+    "check": "npx prettier --check './**/*.{html,css,js}'",
+    "format": "npx prettier --write './**/*.{html,css,js}'",
+    "lint": "npx stylelint \"**/*.css\"",
+    "lintfix": "npx stylelint \"**/*.css\" --fix",
+    "checkALL": "npm run check && npm run lint",
+    "fixALL": "npm run format && npm run lintfix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topsantechnik/posmotri-v-okno-fd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/topsantechnik/posmotri-v-okno-fd/issues"
+  },
+  "homepage": "https://github.com/topsantechnik/posmotri-v-okno-fd#readme",
+  "description": "",
+  "dependencies": {
+    "prettier": "^3.5.3",
+    "stylelint": "^16.19.1"
+  }
+}
