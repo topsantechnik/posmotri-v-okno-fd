@@ -131,6 +131,17 @@ html {
   position: absolute;
   top: 1px;
   left: 1px;
+  display: none;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  display:block;
+}
+
+/* факультатив */
+
+.search-form__label-hover:hover{
+  text-decoration: underline;
 }
 
 .content__details {
