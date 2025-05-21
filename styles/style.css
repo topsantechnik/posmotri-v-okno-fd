@@ -49,6 +49,7 @@ html {
 .search-form {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .search-form__fieldset {
@@ -64,7 +65,7 @@ html {
 
 .search-form__label-focusvisible:has(:focus-visible) { 
   outline: 1px solid white;
-  padding: 1px;
+  outline-offset: 1px;
 }
 
 /*поэтому это под вопросом*/
@@ -142,6 +143,46 @@ html {
 
 .search-form__label-hover:hover{
   text-decoration: underline;
+}
+
+.button {
+color: white;
+background-color: transparent;
+border: 1px solid #FFF;
+font-family: "Fira Sans Condensed";
+font-weight: 700;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+box-sizing: border-box;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:focus {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+
+
+.search-form__submit-button {
+ width: 194px;
+ height: 34px;
+ justify-content: flex-end;
+}
+
+.more-button{
+  height: 34px;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .content__details {
