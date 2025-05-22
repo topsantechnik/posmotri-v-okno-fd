@@ -38,6 +38,7 @@ html {
   width: 711px;
   height: 386px;
   margin-bottom: 16px;
+  position: relative;
 }
 
 .result__video {
@@ -59,11 +60,12 @@ html {
 .search-form__label {
   display: flex;
   width: fit-content;
+  cursor: pointer;
 }
 
 /* написано факультатив для лейбла (Шаг4)*/
 
-.search-form__label-focusvisible:has(:focus-visible) { 
+.search-form__label-focusvisible:has(:focus-visible) {
   outline: 1px solid white;
   outline-offset: 1px;
 }
@@ -71,7 +73,7 @@ html {
 /*поэтому это под вопросом*/
 
 .search-form__textfield {
-  font-family: "Fira Sans Condensed";
+  font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -84,11 +86,11 @@ html {
   height: 27px;
   margin-left: 0;
   padding-left: 0;
-  color:#fff;
+  color: #fff;
   appearance: none;
 }
 
-.search-form__textfield:focus-visible{
+.search-form__textfield:focus-visible {
   outline: none;
 }
 
@@ -98,7 +100,7 @@ html {
 }
 
 .search-form__fieldset-title {
-  font-family: "Fira Sans Condensed";
+  font-family: 'Fira Sans Condensed';
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -115,7 +117,7 @@ html {
   white-space: nowrap;
 }
 
-.search-form__pseudo-checkbox{
+.search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
   box-sizing: border-box;
@@ -124,8 +126,8 @@ html {
   position: relative;
 }
 
-.search-form__pseudo-checkbox::after{
-  content: "";
+.search-form__pseudo-checkbox::after {
+  content: '';
   width: 15px;
   height: 15px;
   background-color: #fff;
@@ -136,26 +138,27 @@ html {
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  display:block;
+  display: block;
 }
 
 /* факультатив */
 
-.search-form__label-hover:hover{
+.search-form__label-hover:hover {
   text-decoration: underline;
 }
 
 .button {
-color: white;
-background-color: transparent;
-border: 1px solid #FFF;
-font-family: "Fira Sans Condensed";
-font-weight: 700;
-font-size: 18px;
-line-height: 100%;
-letter-spacing: 0%;
-text-align: center;
-box-sizing: border-box;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #fff;
+  font-family: 'Fira Sans Condensed';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .button:active {
@@ -171,15 +174,13 @@ box-sizing: border-box;
   outline-offset: 1px;
 }
 
-
-
 .search-form__submit-button {
- width: 194px;
- height: 34px;
- justify-content: flex-end;
+  width: 194px;
+  height: 34px;
+  justify-content: flex-end;
 }
 
-.more-button{
+.more-button {
   height: 34px;
   width: 100%;
   margin-top: 30px;
@@ -207,6 +208,7 @@ box-sizing: border-box;
 .content__list-container {
   overflow-y: auto;
   max-height: 298px; /* ограничение по высоте */
+  position: relative;
 }
 
 .content__list {
@@ -249,6 +251,10 @@ box-sizing: border-box;
   align-items: start;
 }
 
+.content__video-card:hover {
+  text-decoration: underline;
+}
+
 .content__video-card-thumbnail {
   width: 194px;
   height: 103px;
@@ -258,6 +264,11 @@ box-sizing: border-box;
 
 .content__video-card-description-container {
   flex-grow: 1;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+  display: block;
 }
 
 h1,
@@ -291,4 +302,12 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #d9d9d9;
+}
+
+.preloader {
+  position: absolute;
+  inset:0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
 }
