@@ -4,6 +4,25 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 html {
   block-size: 100%;
 }
@@ -45,6 +64,7 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -61,11 +81,12 @@ html {
   display: flex;
   width: fit-content;
   cursor: pointer;
+  align-items: center;
 }
 
 /* написано факультатив для лейбла (Шаг4)*/
 
-.search-form__label-focusvisible:has(:focus-visible) {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid white;
   outline-offset: 1px;
 }
@@ -73,7 +94,7 @@ html {
 /*поэтому это под вопросом*/
 
 .search-form__textfield {
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', 'Arial Narrow', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -101,7 +122,7 @@ html {
 }
 
 .search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', 'Arial Narrow', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
@@ -144,19 +165,19 @@ html {
 
 /* факультатив */
 
-.search-form__label-hover:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
 .button {
+  height: 34px;
   color: white;
   background-color: transparent;
   border: 1px solid #fff;
-  font-family: 'Fira Sans Condensed';
+  font-family: 'Fira Sans Condensed', 'Arial Narrow', sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
@@ -177,12 +198,10 @@ html {
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
   justify-content: flex-end;
 }
 
 .more-button {
-  height: 34px;
   width: 100%;
   margin-top: 30px;
 }
@@ -195,7 +214,7 @@ html {
 
 .title {
   padding-bottom: 26px;
-  font-family: Oswald;
+  font-family: Oswald, 'Arial Narrow', sans-serif;
   font-weight: 700;
   font-size: 75px;
   line-height: 94%;
@@ -223,7 +242,7 @@ html {
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, 'Arial Narrow', sans-serif;
   font-weight: 700;
   font-size: 30px;
   line-height: 100%;
@@ -237,11 +256,11 @@ html {
 }
 
 .content__video-card-description {
-  font-family: 'Fira Sans' Condensed;
+  font-family: 'Fira Sans Condensed', 'Arial Narrow', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 16.2px;
-  display: box; /* стандартное свойство, хоть и пока с ограниченной поддержкой */
+  display: box;
   overflow: hidden;
   text-overflow: ellipsis;
   line-clamp: 4; /* стандартное свойство (добавляется для совместимости, но работает не везде) */
@@ -252,9 +271,11 @@ html {
   align-items: start;
 }
 
-.content__video-card:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
+
+/*ДОРОГАЯ НАТАЛЬЯ, СТИЛИ СОСТОЯНИЯ КНОПКИ Я ЗАДАЛ ВЫШЕ И АБСОЛЮТНО НЕ ПОНИМАЮ ЧТО С НЕЙ НЕ ТАК?*/
 
 .content__video-card-thumbnail {
   width: 194px;
@@ -272,25 +293,6 @@ html {
   display: block;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-ol {
-  list-style: none;
-}
-
 /* Кастомный скроллбар */
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -303,12 +305,4 @@ ol {
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background-color: #d9d9d9;
-}
-
-.preloader {
-  position: absolute;
-  inset:0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
 }
